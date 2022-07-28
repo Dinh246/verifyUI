@@ -11,6 +11,7 @@ import java.time.Duration;
 import static io.appium.java_client.Setting.*;
 
 public class AppiumDriverEx {
+
     public static AppiumDriver getAppiumDriver() {
 
         AppiumDriver appiumDriver;
