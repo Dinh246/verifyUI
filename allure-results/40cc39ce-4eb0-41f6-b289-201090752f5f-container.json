@@ -1,0 +1,1 @@
+{"uuid":"40cc39ce-4eb0-41f6-b289-201090752f5f","name":"R1 String Check 2","children":["1ea795f0-ad55-4ab6-b728-93078d361bae"],"befores":[],"afters":[{"name":"closeApp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1658915119014,"stop":1658915119289}],"start":1658915098956,"stop":1658915119289}
