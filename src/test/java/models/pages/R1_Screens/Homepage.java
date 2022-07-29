@@ -79,8 +79,9 @@ public class Homepage extends TakeScreenshotAndWaitEle {
         return this;
     }
 
-    public void closeFeedback(){
+    public Homepage closeFeedback(){
         androidDriver.findElement(closeFeedbackBtn).click();
+        return this;
     }
 
     public Homepage openMoreCate(){
@@ -88,8 +89,9 @@ public class Homepage extends TakeScreenshotAndWaitEle {
         return this;
     }
 
-    public void closeMoreCate(){
+    public Homepage closeMoreCate(){
         androidDriver.findElement(closeCateBtn).click();
+        return this;
     }
 
     public void goToSearch(){

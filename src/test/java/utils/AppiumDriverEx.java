@@ -7,13 +7,13 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 
 import static io.appium.java_client.Setting.*;
 
 public class AppiumDriverEx {
 
     public static AppiumDriver getAppiumDriver() {
-
         AppiumDriver appiumDriver;
         UiAutomator2Options options = new UiAutomator2Options()
                 .setLanguage("de")
@@ -43,7 +43,7 @@ public class AppiumDriverEx {
         return appiumDriver;
     }
 
-    public static AndroidDriver getAndroidDriver(){
+    public static AndroidDriver getAndroidDriver() {
         AndroidDriver androidDriver;
         UiAutomator2Options options = new UiAutomator2Options()
                 .setLanguage("en")

@@ -27,7 +27,7 @@ public class TakeScreenshotAndWaitEle {
     }
 
     public TakeScreenshotAndWaitEle waitScreenStable(WebElement Element){
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(Element));
         return this;
     }

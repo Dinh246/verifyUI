@@ -26,6 +26,10 @@ public class Detail extends TakeScreenshotAndWaitEle {
     private final By acceptSetRing = By.id("com.bluesky.best_ringtone.free2017:id/btn_yes");
     private final By waveAnim = By.id("com.bluesky.best_ringtone.free2017:id/equalizer");
     private final By watchAds = By.id("com.bluesky.best_ringtone.free2017:id/btn_yes");
+    private final By okBtn = By.id("com.bluesky.best_ringtone.free2017:id/btn_yes");
+    private final By permissionDialog = By.id("com.bluesky.best_ringtone.free2017:id/title1");
+    private final By allowBtn = By.id("com.android.packageinstaller:id/permission_allow_button");
+    private final By switchOn = By.id("android:id/switch_widget");
 
     public Detail(AndroidDriver androidDriver) {
         super(androidDriver);
@@ -61,6 +65,12 @@ public class Detail extends TakeScreenshotAndWaitEle {
         return this;
     }
 
+    public Detail grantDownloadPermission(){
+        androidDriver.findElement(okBtn).click();
+        androidDriver.findElement(allowBtn).click();
+        return this;
+    }
+
     public WebElement AcceptBtn(){
         return androidDriver.findElement(acceptBtn);
     }
@@ -71,6 +81,10 @@ public class Detail extends TakeScreenshotAndWaitEle {
 
     public WebElement WaveAnim(){
         return androidDriver.findElement(waveAnim);
+    }
+
+    public WebElement permissionDialog(){
+        return androidDriver.findElement(permissionDialog);
     }
 
     public WebElement DelBtn(){
@@ -93,6 +107,14 @@ public class Detail extends TakeScreenshotAndWaitEle {
 
     public void closeSettingsAndBackToHomepage(){
         androidDriver.findElement(setRingBtn).click();
+//        if (androidDriver.findElement(permissionDialog).isDisplayed()){
+//            super.waitScreenStable(androidDriver.findElement(okBtn));
+//            androidDriver.findElement(okBtn).click();
+//            super.waitScreenStable(androidDriver.findElement(okBtn));
+//            androidDriver.findElement(okBtn).click();
+//            androidDriver.findElement(switchOn).click();
+//            androidDriver.activateApp("com.bluesky.best_ringtone.free2017");
+//        }
         androidDriver.findElement(acceptBtn).click();
         androidDriver.findElement(noTry).click();
     }
