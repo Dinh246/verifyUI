@@ -32,7 +32,7 @@ public class R1UiCheck_Session1 {
         androidDriver.quit();
     }
 
-    @Test(priority = 1, groups = {"GroupA"})
+    @Test(description = "Take screenshot of Homepage & Cate list")
     public void takeScreenshotHomepage() throws IOException {
         homePage.waitScreenStable(homePage.LeftMenu())
                 .takeScreenshot(scrPath.en, "Homepage.png")

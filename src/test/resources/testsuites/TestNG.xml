@@ -2,24 +2,33 @@
 
 <suite name="Suite1" parallel="tests">
 
-<!--    <test name="R1 String Check 1 on Nokia 5 Plus">-->
-<!--        <parameter name="language" value="en"/>-->
-<!--        <parameter name="locale" value="us"/>-->
-<!--        <parameter name="udid" value="R5CR514X3SX"/>-->
-<!--        <parameter name="port" value="5000"/>-->
-<!--        <classes>-->
-<!--            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>-->
-<!--        </classes>-->
-
-<!--    </test>-->
+    <test name="R1 String Check 1 on S21">
+        <parameter name="language" value="en"/>
+        <parameter name="locale" value="us"/>
+        <parameter name="udid" value="R5CR514X3SX"/>
+        <parameter name="port" value="5000"/>
+        <classes>
+            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>
+        </classes>
+    </test>
 
     <test name="R1 String Check 1 on Samsung J7">
         <parameter name="language" value="de"/>
         <parameter name="locale" value="de"/>
         <parameter name="udid" value="4200ba13acecb49d"/>
-        <parameter name="port" value="6000"/>
+        <parameter name="port" value="5001"/>
         <classes>
             <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>
         </classes>
     </test>
+
+<!--    <test name="R1 String Check 1 on Nokia 5 Plus">-->
+<!--        <parameter name="language" value="es"/>-->
+<!--        <parameter name="locale" value="es"/>-->
+<!--        <parameter name="udid" value="PDAGAA48A1506417"/>-->
+<!--        <parameter name="port" value="5002"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
