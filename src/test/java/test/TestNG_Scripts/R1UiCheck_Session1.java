@@ -41,7 +41,7 @@ public class R1UiCheck_Session1 {
                 .waitScreenStable(homePage.ListCate())
                 .takeScreenshot(scrPath.en, "Cate.jpg")
                 .closeMoreCate()
-                .goToDetail();
+                .goToDetail(2);
     }
 
     @Test(priority = 2, groups = {"GroupA"})

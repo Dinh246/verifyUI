@@ -48,7 +48,7 @@ public class userActions {
         swipe = new Sequence(finger,1);
         swipe.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), (int)startX, centerY));
         swipe.addAction(finger.createPointerDown(0));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), (int)endX, centerY));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(200), PointerInput.Origin.viewport(), (int)endX, centerY));
         swipe.addAction(finger.createPointerUp(0));
 
         androidDriver.perform(List.of(swipe));
@@ -66,7 +66,7 @@ public class userActions {
         swipe = new Sequence(finger,1);
         swipe.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), (int)startX, centerY));
         swipe.addAction(finger.createPointerDown(0));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), (int)endX, centerY));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(200), PointerInput.Origin.viewport(), (int)endX, centerY));
         swipe.addAction(finger.createPointerUp(0));
 
         androidDriver.perform(List.of(swipe));
@@ -83,7 +83,7 @@ public class userActions {
         scroll = new Sequence(finger,1);
         scroll.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), centerX, (int) startY));
         scroll.addAction(finger.createPointerDown(0));
-        scroll.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), centerX, (int) endY));
+        scroll.addAction(finger.createPointerMove(Duration.ofMillis(480), PointerInput.Origin.viewport(), centerX, (int) endY));
         scroll.addAction(finger.createPointerUp(0));
 
         androidDriver.perform(List.of(scroll));
@@ -100,7 +100,7 @@ public class userActions {
         scroll = new Sequence(finger,1);
         scroll.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), centerX, (int) startY));
         scroll.addAction(finger.createPointerDown(0));
-        scroll.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), centerX, (int) endY));
+        scroll.addAction(finger.createPointerMove(Duration.ofMillis(480), PointerInput.Origin.viewport(), centerX, (int) endY));
         scroll.addAction(finger.createPointerUp(0));
 
         androidDriver.perform(List.of(scroll));

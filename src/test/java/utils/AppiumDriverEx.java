@@ -67,7 +67,7 @@ public class AppiumDriverEx {
 
         assert appiumServer != null;
         androidDriver = new AndroidDriver(appiumServer, options);
-        androidDriver.setSetting(WAIT_FOR_IDLE_TIMEOUT, 0);
+        androidDriver.setSetting(WAIT_FOR_IDLE_TIMEOUT, 5);
         androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         return androidDriver;

@@ -24,7 +24,7 @@ public class R1UiCheck_Session2 {
         Homepage homePage = new Homepage(driverSession2);
         Detail detail = new Detail(driverSession2);
         homePage.waitScreenStable(homePage.LeftMenu())
-                .goToDetail();
+                .goToDetail(2);
 
         detail.waitScreenStable(detail.WaveAnim())
                 .stopRingtone()

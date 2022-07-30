@@ -47,8 +47,9 @@ public class Homepage extends userActions {
         return androidDriver.findElement(recycleCollections);
     }
 
-    public void goToDetail() {
-        androidDriver.findElements(ringtones).get(1).click();
+    public void goToDetail(Integer ringIndex) {
+        waitScreenStable(this.Ringtone().get(ringIndex));
+        androidDriver.findElements(ringtones).get(ringIndex).click();
     }
 
     public WebElement RateBtn(){
