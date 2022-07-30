@@ -3,11 +3,12 @@ package models.pages.R1_Screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
 import java.io.IOException;
+import java.util.List;
 
-public class Homepage extends TakeScreenshotAndWaitEle {
+public class Homepage extends userActions {
 
     private final AndroidDriver androidDriver;
     private final By leftMenu = By.id("com.bluesky.best_ringtone.free2017:id/layout_icon_menu_home");
@@ -25,6 +26,8 @@ public class Homepage extends TakeScreenshotAndWaitEle {
     private final By closeCateBtn = By.id("com.bluesky.best_ringtone.free2017:id/icon_hide_dialog_category");
     private final By requestRing = By.id("com.bluesky.best_ringtone.free2017:id/layout_menu_request");
     private final By hardToUseOpts = By.xpath("//*[@resource-id='com.bluesky.best_ringtone.free2017:id/selected_feedback']");
+    private final By recycleRingtones = By.id("com.bluesky.best_ringtone.free2017:id/detail_container");
+    private final By recycleCollections = By.id("com.bluesky.best_ringtone.free2017:id/tabLayout");
 
 
     public Homepage(AndroidDriver androidDriver) {
@@ -34,6 +37,14 @@ public class Homepage extends TakeScreenshotAndWaitEle {
 
     public WebElement LeftMenu(){
         return androidDriver.findElement(leftMenu);
+    }
+
+    public WebElement RecycleRingtones(){
+        return androidDriver.findElement(recycleRingtones);
+    }
+
+    public WebElement RecycleCollections(){
+        return androidDriver.findElement(recycleCollections);
     }
 
     public void goToDetail() {
@@ -100,6 +111,10 @@ public class Homepage extends TakeScreenshotAndWaitEle {
 
     public WebElement ListCate(){
         return androidDriver.findElement(listCate);
+    }
+
+    public List<WebElement> Ringtone(){
+        return androidDriver.findElements(ringtones);
     }
 
     public Homepage openLeftMenu(){

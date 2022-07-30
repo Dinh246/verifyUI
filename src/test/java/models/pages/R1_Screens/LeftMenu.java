@@ -2,9 +2,9 @@ package models.pages.R1_Screens;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
-public class LeftMenu extends TakeScreenshotAndWaitEle {
+public class LeftMenu extends userActions {
 
     private final AndroidDriver androidDriver;
     private final By backBtn = By.id("com.ringpro.popular.freerings:id/icon_back_menu");

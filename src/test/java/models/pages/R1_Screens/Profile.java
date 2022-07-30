@@ -3,11 +3,11 @@ package models.pages.R1_Screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
-public class Profile extends TakeScreenshotAndWaitEle {
+public class Profile extends userActions {
 
-    private AndroidDriver androidDriver;
+    private final AndroidDriver androidDriver;
     private final By favTab = By.id("com.ringpro.popular.freerings:id/text_favorited");
     private final By homeMenubar = By.id("com.ringpro.popular.freerings:id/menu_home");
     private final By cateMenubar = By.id("com.ringpro.popular.freerings:id/menu_category");

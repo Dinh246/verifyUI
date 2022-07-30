@@ -49,14 +49,14 @@ public class AppiumDriverEx {
                 .setLanguage("en")
                 .setLocale("us")
 //                .setApp("C:\\Users\\nicky\\Downloads\\R4.apk")
-                .setUdid("PDAGAA48A1506417")
+                .setUdid("R5CR514X3SX")
                 .setAutomationName("uiautomator2")
                 .setAutoGrantPermissions(true)
                 .setPlatformName("Android")
-                .disableWindowAnimation()
+//                .disableWindowAnimation()
                 .setAppPackage("com.bluesky.best_ringtone.free2017")
-                .setAppActivity(".ui.splash.SplashActivity")
-                .noReset();
+                .setAppActivity(".ui.splash.SplashActivity");
+//                .noReset();
 
         URL appiumServer = null;
         try {

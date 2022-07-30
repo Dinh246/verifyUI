@@ -1,17 +1,19 @@
 package models.pages.R4_Screens;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
+import utils.userActions;
 
 import java.io.File;
 import java.io.IOException;
 
-public class Detail {
+public class Detail extends userActions {
 
-    private AppiumDriver appiumDriver;
+    private final AppiumDriver androidDriver;
     private final By backBtn = By.id("com.appspro.best.ringtones2017:id/icon_back_status");
     private final By prevBtn = By.id("com.appspro.best.ringtones2017:id/icon_play_pre");
     private final By nextBtn = By.id("com.appspro.best.ringtones2017:id/icon_play_next");
@@ -33,102 +35,127 @@ public class Detail {
     private final By setAlarmBtn = By.id("com.appspro.best.ringtones2017:id/icon_set_alarm");
     private final By waveAnim = By.id("com.appspro.best.ringtones2017:id/equalizerView");
 
-    public Detail(AppiumDriver appiumDriver) {
-        this.appiumDriver = appiumDriver;
+    public Detail(AndroidDriver androidDriver) {
+        super(androidDriver);
+        this.androidDriver = androidDriver;
     }
 
     public AppiumDriver getAppiumDriver() {
-        return appiumDriver;
+        return androidDriver;
     }
 
     public WebElement BackBtn() {
-        return appiumDriver.findElement(backBtn);
+        return androidDriver.findElement(backBtn);
     }
 
     public WebElement PrevBtn() {
-        return appiumDriver.findElement(prevBtn);
+        return androidDriver.findElement(prevBtn);
     }
 
     public WebElement NextBtn() {
-        return appiumDriver.findElement(nextBtn);
+        return androidDriver.findElement(nextBtn);
     }
 
     public WebElement PlayBtn() {
-        return appiumDriver.findElement(playBtn);
+        return androidDriver.findElement(playBtn);
     }
 
     public WebElement FavBtn() {
-        return appiumDriver.findElement(favBtn);
+        return androidDriver.findElement(favBtn);
     }
 
     public WebElement DownBtn() {
-        return appiumDriver.findElement(downBtn);
+        return androidDriver.findElement(downBtn);
     }
 
     public WebElement DelBtn() {
-        return appiumDriver.findElement(delBtn);
+        return androidDriver.findElement(delBtn);
     }
 
     public WebElement SetBtn() {
-        return appiumDriver.findElement(setBtn);
+        return androidDriver.findElement(setBtn);
     }
 
     public WebElement CloseBtn() {
-        return appiumDriver.findElement(closeBtn);
+        return androidDriver.findElement(closeBtn);
     }
 
     public WebElement WatchAdsBtn1() {
-        return appiumDriver.findElement(watchAdsBtn1);
+        return androidDriver.findElement(watchAdsBtn1);
     }
 
     public WebElement WatchAdsBtn2() {
-        return appiumDriver.findElement(watchAdsBtn2);
+        return androidDriver.findElement(watchAdsBtn2);
     }
 
     public WebElement BuyVipBtn1() {
-        return appiumDriver.findElement(buyVipBtn1);
+        return androidDriver.findElement(buyVipBtn1);
     }
 
     public WebElement BuyVipBtn2() {
-        return appiumDriver.findElement(buyVipBtn2);
+        return androidDriver.findElement(buyVipBtn2);
     }
 
     public WebElement CancelBtn() {
-        return appiumDriver.findElement(cancelBtn);
+        return androidDriver.findElement(cancelBtn);
     }
 
     public WebElement CloseInterBtn() {
-        return appiumDriver.findElement(closeInterBtn);
+        return androidDriver.findElement(closeInterBtn);
     }
 
     public WebElement SetRingBtn() {
-        return appiumDriver.findElement(setRingBtn);
+        return androidDriver.findElement(setRingBtn);
     }
 
     public WebElement SetContactBtn() {
-        return appiumDriver.findElement(setContactBtn);
+        return androidDriver.findElement(setContactBtn);
     }
 
     public WebElement SetNotiBtn() {
-        return appiumDriver.findElement(setNotiBtn);
+        return androidDriver.findElement(setNotiBtn);
     }
 
     public WebElement SetAlarmBtn() {
-        return appiumDriver.findElement(setAlarmBtn);
+        return androidDriver.findElement(setAlarmBtn);
     }
 
     public WebElement WaveAnim() {
-        return appiumDriver.findElement(waveAnim);
+        return androidDriver.findElement(waveAnim);
     }
 
     public Detail takeScreenshot(String savedPath, String screenshotName) throws IOException {
-        File Detail = appiumDriver.getScreenshotAs(OutputType.FILE);
+        File Detail = androidDriver.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(Detail, new File(savedPath + screenshotName));
         return this;
     }
 
     public Detail addToFavorites(){
         this.FavBtn().click();
+        return this;
+    }
+
+    @Override
+    public Detail swipeLeft(WebElement element){
+        super.swipeLeft(element);
+        return this;
+    }
+
+    @Override
+    public Detail swipeRight(WebElement element){
+        super.swipeRight(element);
+        return this;
+    }
+
+    @Override
+    public Detail scrollUp(WebElement element){
+        super.scrollUp(element);
+        return this;
+    }
+
+    @Override
+    public Detail scrollDown(WebElement element){
+        super.scrollDown(element);
         return this;
     }
 }

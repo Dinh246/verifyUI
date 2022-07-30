@@ -5,12 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
 import java.io.IOException;
-import java.util.List;
 
-public class Search extends TakeScreenshotAndWaitEle {
+public class Search extends userActions {
 
     private final AndroidDriver androidDriver;
     private final By searchBar = By.id("com.bluesky.best_ringtone.free2017:id/search_src_text");

@@ -1,14 +1,18 @@
 package models.pages.R4_Screens;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import utils.userActions;
 
+import javax.lang.model.util.Elements;
+import java.io.IOException;
 import java.util.List;
 
-public class Homepage {
+public class Homepage extends userActions {
 
-    private AppiumDriver appiumDriver;
+    private final AndroidDriver androidDriver;
     private final By leftMenu = By.id("com.appspro.best.ringtones2017:id/icon_menu");
     private final By vipIcon = By.id("com.appspro.best.ringtones2017:id/btn_vip");
     private final By otherCollections = By.id("com.appspro.best.ringtones2017:id/img_collection");
@@ -31,101 +35,152 @@ public class Homepage {
     private final By otherFeedback = By.id("com.appspro.best.ringtones2017:id/edt_feedback");
     private final By okBtn = By.id("com.appspro.best.ringtones2017:id/btn_send");
     private final By vipTitle = By.id("com.appspro.best.ringtones2017:id/text1");
+    private final By recycleRingtones = By.id("com.appspro.best.ringtones2017:id/recycle_ringtone");
+    private final By recycleCollections = By.id("com.appspro.best.ringtones2017:id/recycleCollection");
 
 
-    public Homepage(AppiumDriver appiumDriver) {
-        this.appiumDriver = appiumDriver;
+    public Homepage(AndroidDriver androidDriver) {
+        super(androidDriver);
+        this.androidDriver = androidDriver;
     }
 
     public AppiumDriver getAppiumDriver() {
-        return appiumDriver;
+        return androidDriver;
     }
 
     public WebElement LeftMenu() {
-        return appiumDriver.findElement(leftMenu);
+        return androidDriver.findElement(leftMenu);
     }
 
     public WebElement VipIcon() {
-        return appiumDriver.findElement(vipIcon);
+        return androidDriver.findElement(vipIcon);
     }
 
     public List<WebElement> OtherCollections() {
-        return appiumDriver.findElements(otherCollections);
+        return androidDriver.findElements(otherCollections);
     }
 
     public List<WebElement> Ringtones() {
-        return appiumDriver.findElements(ringtones);
+        return androidDriver.findElements(ringtones);
     }
 
     public List<WebElement> PlayBtn() {
-        return appiumDriver.findElements(playBtn);
+        return androidDriver.findElements(playBtn);
     }
 
     public List<WebElement> FavBtn() {
-        return appiumDriver.findElements(favBtn);
+        return androidDriver.findElements(favBtn);
     }
 
     public WebElement DownMenubar() {
-        return appiumDriver.findElement(downMenubar);
+        return androidDriver.findElement(downMenubar);
+    }
+
+    public WebElement RecycleRingtones() {
+        return androidDriver.findElement(recycleRingtones);
+    }
+
+    public WebElement RecycleCollections() {
+        return androidDriver.findElement(recycleCollections);
     }
 
     public WebElement SearchMenubar() {
-        return appiumDriver.findElement(searchMenubar);
+        return androidDriver.findElement(searchMenubar);
     }
 
     public WebElement MoreappsMenubar() {
-        return appiumDriver.findElement(moreappsMenubar);
+        return androidDriver.findElement(moreappsMenubar);
     }
 
     public WebElement RateBtn() {
-        return appiumDriver.findElement(rateBtn);
+        return androidDriver.findElement(rateBtn);
     }
 
     public WebElement CloseRateBtn() {
-        return appiumDriver.findElement(closeRateBtn);
+        return androidDriver.findElement(closeRateBtn);
     }
 
     public WebElement FiveStars() {
-        return appiumDriver.findElement(fiveStars);
+        return androidDriver.findElement(fiveStars);
     }
 
     public WebElement FourStars() {
-        return appiumDriver.findElement(fourStars);
+        return androidDriver.findElement(fourStars);
     }
 
     public WebElement SubmitBtn() {
-        return appiumDriver.findElement(submitBtn);
+        return androidDriver.findElement(submitBtn);
     }
 
     public WebElement CloseBtn() {
-        return appiumDriver.findElement(closeBtn);
+        return androidDriver.findElement(closeBtn);
     }
 
     public List<WebElement> FeedbackOptions() {
-        return appiumDriver.findElements(feedbackOptions);
+        return androidDriver.findElements(feedbackOptions);
     }
 
     public WebElement SendFeedbackBtn() {
-        return appiumDriver.findElement(sendFeedbackBtn);
+        return androidDriver.findElement(sendFeedbackBtn);
     }
 
     public WebElement CloseFeedbackBtn() {
-        return appiumDriver.findElement(closeFeedbackBtn);
+        return androidDriver.findElement(closeFeedbackBtn);
     }
 
     public WebElement OtherFeedback() {
-        return appiumDriver.findElement(otherFeedback);
+        return androidDriver.findElement(otherFeedback);
     }
 
     public WebElement OkBtn() {
-        return appiumDriver.findElement(okBtn);
+        return androidDriver.findElement(okBtn);
     }
 
     public WebElement HomeMenubar() {
-        return appiumDriver.findElement(homeMenubar);
+        return androidDriver.findElement(homeMenubar);
     }
 
     public WebElement VipTitle() {
-        return appiumDriver.findElement(vipTitle);
+        return androidDriver.findElement(vipTitle);
+    }
+
+    public void goToDetail() {
+        androidDriver.findElements(ringtones).get(1).click();
+    }
+
+    @Override
+    public Homepage takeScreenshot(String savedPath, String screenshotName) throws IOException {
+        super.takeScreenshot(savedPath, screenshotName);
+        return this;
+    }
+
+    @Override
+    public Homepage waitScreenStable(WebElement Element) {
+        super.waitScreenStable(Element);
+        return this;
+    }
+
+    @Override
+    public Homepage swipeLeft(WebElement element){
+        super.swipeLeft(element);
+        return this;
+    }
+
+    @Override
+    public Homepage swipeRight(WebElement element){
+        super.swipeRight(element);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollUp(WebElement element){
+        super.scrollUp(element);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollDown(WebElement element){
+        super.scrollDown(element);
+        return this;
     }
 }

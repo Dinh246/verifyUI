@@ -2,9 +2,9 @@ package models.pages.R1_Screens;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
-public class Categories extends TakeScreenshotAndWaitEle {
+public class Categories extends userActions {
 
     private AndroidDriver androidDriver;
     private final By leftMenu = By.id("com.ringpro.popular.freerings:id/layoutIconMenuHome");

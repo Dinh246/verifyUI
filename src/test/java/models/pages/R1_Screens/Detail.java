@@ -3,11 +3,11 @@ package models.pages.R1_Screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
 import java.io.IOException;
 
-public class Detail extends TakeScreenshotAndWaitEle {
+public class Detail extends userActions {
 
     private final AndroidDriver androidDriver;
     private final By backBtn = By.id("com.bluesky.best_ringtone.free2017:id/icon_back");
@@ -30,6 +30,8 @@ public class Detail extends TakeScreenshotAndWaitEle {
     private final By permissionDialog = By.id("com.bluesky.best_ringtone.free2017:id/title1");
     private final By allowBtn = By.id("com.android.packageinstaller:id/permission_allow_button");
     private final By switchOn = By.id("android:id/switch_widget");
+    private final By mediaFrame = By.xpath("//*[@resource-id='com.bluesky.best_ringtone.free2017:id/item_root']");
+
 
     public Detail(AndroidDriver androidDriver) {
         super(androidDriver);
@@ -83,6 +85,10 @@ public class Detail extends TakeScreenshotAndWaitEle {
         return androidDriver.findElement(waveAnim);
     }
 
+    public WebElement MediaFrame(){
+        return androidDriver.findElement(mediaFrame);
+    }
+
     public WebElement permissionDialog(){
         return androidDriver.findElement(permissionDialog);
     }
@@ -128,6 +134,29 @@ public class Detail extends TakeScreenshotAndWaitEle {
     @Override
     public Detail waitScreenStable(WebElement Element) {
         super.waitScreenStable(Element);
+        return this;
+    }
+    @Override
+    public Detail swipeLeft(WebElement element){
+        super.swipeLeft(element);
+        return this;
+    }
+
+    @Override
+    public Detail swipeRight(WebElement element){
+        super.swipeRight(element);
+        return this;
+    }
+
+    @Override
+    public Detail scrollUp(WebElement element){
+        super.scrollUp(element);
+        return this;
+    }
+
+    @Override
+    public Detail scrollDown(WebElement element){
+        super.scrollDown(element);
         return this;
     }
 }

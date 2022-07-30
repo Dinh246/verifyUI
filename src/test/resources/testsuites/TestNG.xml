@@ -8,19 +8,19 @@
         <parameter name="udid" value="R5CR514X3SX"/>
         <parameter name="port" value="5000"/>
         <classes>
-            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>
+            <class name="test.TestNG_Scripts.SwipeScrollTest"/>
         </classes>
     </test>
 
-    <test name="R1 String Check 1 on Samsung J7">
-        <parameter name="language" value="de"/>
-        <parameter name="locale" value="de"/>
-        <parameter name="udid" value="4200ba13acecb49d"/>
-        <parameter name="port" value="5001"/>
-        <classes>
-            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>
-        </classes>
-    </test>
+<!--    <test name="R1 String Check 1 on Samsung J7">-->
+<!--        <parameter name="language" value="de"/>-->
+<!--        <parameter name="locale" value="de"/>-->
+<!--        <parameter name="udid" value="4200ba13acecb49d"/>-->
+<!--        <parameter name="port" value="5001"/>-->
+<!--        <classes>-->
+<!--            <class name="test.TestNG_Scripts.R1UiCheck_Session1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--    <test name="R1 String Check 1 on Nokia 5 Plus">-->
 <!--        <parameter name="language" value="es"/>-->

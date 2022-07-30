@@ -4,11 +4,11 @@ package models.pages.R1_Screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TakeScreenshotAndWaitEle;
+import utils.userActions;
 
 import java.io.IOException;
 
-public class RequestRing extends TakeScreenshotAndWaitEle {
+public class RequestRing extends userActions {
 
         private final AndroidDriver androidDriver;
         private final By backBtn = By.id("com.bluesky.best_ringtone.free2017:id/icon_back_request_new_ring");
