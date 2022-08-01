@@ -150,4 +150,52 @@ public class Homepage extends userActions {
         super.waitScreenStable(Element);
         return this;
     }
+
+    @Override
+    public Homepage swipeLeft(WebElement element){
+        super.swipeLeft(element);
+        return this;
+    }
+
+    @Override
+    public Homepage swipeRight(WebElement element){
+        super.swipeRight(element);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollUp(WebElement element){
+        super.scrollUp(element);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollDown(WebElement element){
+        super.scrollDown(element);
+        return this;
+    }
+
+    @Override
+    public Homepage swipeLeftMultipleTimes(WebElement element, Integer times) {
+        super.swipeLeftMultipleTimes(element, times);
+        return this;
+    }
+
+    @Override
+    public Homepage swipeRightMultipletimes(WebElement element, Integer times) {
+        super.swipeRightMultipletimes(element, times);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollUpMultipleTimes(WebElement element, Integer times) {
+        super.scrollUpMultipleTimes(element, times);
+        return this;
+    }
+
+    @Override
+    public Homepage scrollDownMultipleTimes(WebElement element, Integer times) {
+        super.scrollDownMultipleTimes(element, times);
+        return this;
+    }
 }

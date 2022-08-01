@@ -106,4 +106,82 @@ public class userActions {
         androidDriver.perform(List.of(scroll));
         return this;
     }
+
+    public userActions swipeLeftMultipleTimes(WebElement element, Integer times){
+        int centerY = element.getRect().y + (element.getSize().height/2);
+        double startX = androidDriver.manage().window().getSize().width*0.75;
+        double endX = androidDriver.manage().window().getSize().width*0.25;
+
+        finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        swipe = new Sequence(finger,1);
+        swipe.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), (int)startX, centerY));
+        swipe.addAction(finger.createPointerDown(0));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(200), PointerInput.Origin.viewport(), (int)endX, centerY));
+        swipe.addAction(finger.createPointerUp(0));
+
+        for (int i = 0; i < times; i++){
+            androidDriver.perform(List.of(swipe));
+        }
+
+        return this;
+    }
+
+    public userActions swipeRightMultipletimes(WebElement element, Integer times){
+        int centerY = element.getRect().y + (element.getSize().height/2);
+        double startX = androidDriver.manage().window().getSize().width*0.25;
+        double endX = androidDriver.manage().window().getSize().width*0.9;
+
+        finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        swipe = new Sequence(finger,1);
+        swipe.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), (int)startX, centerY));
+        swipe.addAction(finger.createPointerDown(0));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(200), PointerInput.Origin.viewport(), (int)endX, centerY));
+        swipe.addAction(finger.createPointerUp(0));
+
+        for (int i = 0; i < times; i++){
+            androidDriver.perform(List.of(swipe));
+        }
+        return this;
+    }
+
+    public userActions scrollUpMultipleTimes(WebElement element, Integer times){
+        int centerX = androidDriver.manage().window().getSize().width/2;
+        double startY = element.getRect().y + (element.getSize().height*0.2);
+        double endY = element.getRect().y + (element.getSize().height*0.9);
+
+        finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        scroll = new Sequence(finger,1);
+        scroll.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), centerX, (int) startY));
+        scroll.addAction(finger.createPointerDown(0));
+        scroll.addAction(finger.createPointerMove(Duration.ofMillis(480), PointerInput.Origin.viewport(), centerX, (int) endY));
+        scroll.addAction(finger.createPointerUp(0));
+
+        for (int i = 0; i < times; i++){
+            androidDriver.perform(List.of(scroll));
+        }
+        return this;
+    }
+
+    public userActions scrollDownMultipleTimes(WebElement element, Integer times){
+        int centerX = androidDriver.manage().window().getSize().width/2;
+        double startY = element.getRect().y + (element.getSize().height*0.8);
+        double endY = element.getRect().y + (element.getSize().height*0.2);
+
+        finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        scroll = new Sequence(finger,1);
+        scroll.addAction(finger.createPointerMove(Duration.ofSeconds(0), PointerInput.Origin.viewport(), centerX, (int) startY));
+        scroll.addAction(finger.createPointerDown(0));
+        scroll.addAction(finger.createPointerMove(Duration.ofMillis(480), PointerInput.Origin.viewport(), centerX, (int) endY));
+        scroll.addAction(finger.createPointerUp(0));
+
+        for (int i = 0; i < times; i++){
+            androidDriver.perform(List.of(scroll));
+        }
+
+        return this;
+    }
 }

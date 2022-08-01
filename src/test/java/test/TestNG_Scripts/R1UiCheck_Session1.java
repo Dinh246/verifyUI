@@ -3,7 +3,6 @@ package test.TestNG_Scripts;
 import io.appium.java_client.android.AndroidDriver;
 import models.pages.R1_Screens.*;
 import org.testng.annotations.*;
-import utils.AppiumDriverEx;
 import utils.MultipleAppiumDrivers;
 import utils.scrPath;
 

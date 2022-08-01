@@ -42,76 +42,76 @@ public class Detail extends userActions {
         return androidDriver;
     }
 
-    public Detail addToFavorites(){
+    public Detail addToFavorites() {
         androidDriver.findElement(favBtn).click();
         return this;
     }
 
-    public Detail stopRingtone(){
+    public Detail stopRingtone() {
         androidDriver.findElement(playBtn).click();
         return this;
     }
 
-    public Detail tapDownload(){
+    public Detail tapDownload() {
         androidDriver.findElement(downBtn).click();
         return this;
     }
 
-    public Detail tapSkipRewarded(){
+    public Detail tapSkipRewarded() {
         androidDriver.findElement(skipBtn).click();
         return this;
     }
 
-    public Detail tapAcceptRewarded(){
+    public Detail tapAcceptRewarded() {
         androidDriver.findElement(acceptBtn).click();
         return this;
     }
 
-    public Detail grantDownloadPermission(){
+    public Detail grantDownloadPermission() {
         androidDriver.findElement(okBtn).click();
         androidDriver.findElement(allowBtn).click();
         return this;
     }
 
-    public WebElement AcceptBtn(){
+    public WebElement AcceptBtn() {
         return androidDriver.findElement(acceptBtn);
     }
 
-    public WebElement SkipBtn(){
+    public WebElement SkipBtn() {
         return androidDriver.findElement(skipBtn);
     }
 
-    public WebElement WaveAnim(){
+    public WebElement WaveAnim() {
         return androidDriver.findElement(waveAnim);
     }
 
-    public WebElement MediaFrame(){
+    public WebElement MediaFrame() {
         return androidDriver.findElement(mediaFrame);
     }
 
-    public WebElement permissionDialog(){
+    public WebElement permissionDialog() {
         return androidDriver.findElement(permissionDialog);
     }
 
-    public WebElement DelBtn(){
+    public WebElement DelBtn() {
         return androidDriver.findElement(delBtn);
     }
 
-    public WebElement SetRingBtn(){
+    public WebElement SetRingBtn() {
         return androidDriver.findElement(setRingBtn);
     }
 
-    public Detail tapSettings(){
+    public Detail tapSettings() {
         androidDriver.findElement(setBtn).click();
         return this;
     }
 
-    public Detail tapWatchAds(){
+    public Detail tapWatchAds() {
         androidDriver.findElement(watchAds).click();
         return this;
     }
 
-    public void closeSettingsAndBackToHomepage(){
+    public void closeSettingsAndBackToHomepage() {
         androidDriver.findElement(setRingBtn).click();
 //        if (androidDriver.findElement(permissionDialog).isDisplayed()){
 //            super.waitScreenStable(androidDriver.findElement(okBtn));
@@ -136,27 +136,28 @@ public class Detail extends userActions {
         super.waitScreenStable(Element);
         return this;
     }
+
     @Override
-    public Detail swipeLeft(WebElement element){
+    public Detail swipeLeft(WebElement element) {
         super.swipeLeft(element);
         return this;
     }
 
     @Override
-    public Detail swipeRight(WebElement element){
+    public Detail swipeRight(WebElement element) {
         super.swipeRight(element);
         return this;
     }
 
     @Override
-    public Detail scrollUp(WebElement element){
-        super.scrollUp(element);
+    public Detail swipeLeftMultipleTimes(WebElement element, Integer times) {
+        super.swipeLeftMultipleTimes(element, times);
         return this;
     }
 
     @Override
-    public Detail scrollDown(WebElement element){
-        super.scrollDown(element);
+    public Detail swipeRightMultipletimes(WebElement element, Integer times) {
+        super.swipeRightMultipletimes(element, times);
         return this;
     }
 }
