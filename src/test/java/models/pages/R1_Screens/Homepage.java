@@ -35,105 +35,105 @@ public class Homepage extends userActions {
         this.androidDriver = androidDriver;
     }
 
-    public WebElement LeftMenu(){
+    public WebElement LeftMenu() {
         return androidDriver.findElement(leftMenu);
     }
 
-    public WebElement RecycleRingtones(){
+    public WebElement RecycleRingtones() {
         return androidDriver.findElement(recycleRingtones);
     }
 
-    public WebElement RecycleCollections(){
+    public WebElement RecycleCollections() {
         return androidDriver.findElement(recycleCollections);
     }
 
     public void goToDetail(Integer ringIndex) {
-        waitScreenStable(this.Ringtone().get(ringIndex));
+        waitForElement(this.Ringtone().get(ringIndex));
         androidDriver.findElements(ringtones).get(ringIndex).click();
     }
 
-    public WebElement RateBtn(){
+    public WebElement RateBtn() {
         return androidDriver.findElement(rateBtn);
     }
 
-    public WebElement SubmitBtn(){
+    public WebElement SubmitBtn() {
         return androidDriver.findElement(submitBtn);
     }
 
-    public WebElement SendFeedbackBtn(){
+    public WebElement SendFeedbackBtn() {
         return androidDriver.findElement(sendFeedbackBtn);
     }
 
-    public WebElement RequestBtn(){
+    public WebElement RequestBtn() {
         return androidDriver.findElement(requestBtn);
     }
 
-    public WebElement RequestRing(){
+    public WebElement RequestRing() {
         return androidDriver.findElement(requestRing);
     }
 
-    public Homepage rateApp4Stars(){
+    public Homepage rateApp4Stars() {
         androidDriver.findElement(rateBtn).click();
         androidDriver.findElement(fourStars).click();
         androidDriver.findElement(submitBtn).click();
         return this;
     }
 
-    public Homepage selectNoFavoriteRingtone(){
+    public Homepage selectNoFavoriteRingtone() {
         androidDriver.findElements(feedbackOptions).get(3).click();
         androidDriver.findElement(sendFeedbackBtn).click();
         return this;
     }
 
-    public Homepage selectHardToUse(){
+    public Homepage selectHardToUse() {
         androidDriver.findElements(feedbackOptions).get(1).click();
         androidDriver.findElement(sendFeedbackBtn).click();
         return this;
     }
 
-    public Homepage closeFeedback(){
+    public Homepage closeFeedback() {
         androidDriver.findElement(closeFeedbackBtn).click();
         return this;
     }
 
-    public Homepage openMoreCate(){
+    public Homepage openMoreCate() {
         androidDriver.findElement(cateBtn).click();
         return this;
     }
 
-    public Homepage closeMoreCate(){
+    public Homepage closeMoreCate() {
         androidDriver.findElement(closeCateBtn).click();
         return this;
     }
 
-    public void goToSearch(){
+    public void goToSearch() {
         androidDriver.findElement(searchBtn).click();
     }
 
-    public WebElement ListCate(){
+    public WebElement ListCate() {
         return androidDriver.findElement(listCate);
     }
 
-    public List<WebElement> Ringtone(){
+    public List<WebElement> Ringtone() {
         return androidDriver.findElements(ringtones);
     }
 
-    public Homepage openLeftMenu(){
+    public Homepage openLeftMenu() {
         androidDriver.findElement(leftMenu).click();
         return this;
     }
 
-    public void goToRequestRing(){
-        waitScreenStable(androidDriver.findElement(requestRing));
+    public void goToRequestRing() {
+        waitForElement(androidDriver.findElement(requestRing));
         androidDriver.findElement(requestRing).click();
     }
 
-    public Homepage selectAnOption(){
+    public Homepage selectAnOption() {
         androidDriver.findElements(hardToUseOpts).get(2).click();
         return this;
     }
 
-    public Homepage submitFeedback(){
+    public Homepage submitFeedback() {
         androidDriver.findElement(sendFeedbackBtn).click();
         return this;
     }
@@ -146,31 +146,31 @@ public class Homepage extends userActions {
     }
 
     @Override
-    public Homepage waitScreenStable(WebElement Element) {
-        super.waitScreenStable(Element);
+    public Homepage waitForElement(WebElement Element) {
+        super.waitForElement(Element);
         return this;
     }
 
     @Override
-    public Homepage swipeLeft(WebElement element){
+    public Homepage swipeLeft(WebElement element) {
         super.swipeLeft(element);
         return this;
     }
 
     @Override
-    public Homepage swipeRight(WebElement element){
+    public Homepage swipeRight(WebElement element) {
         super.swipeRight(element);
         return this;
     }
 
     @Override
-    public Homepage scrollUp(WebElement element){
+    public Homepage scrollUp(WebElement element) {
         super.scrollUp(element);
         return this;
     }
 
     @Override
-    public Homepage scrollDown(WebElement element){
+    public Homepage scrollDown(WebElement element) {
         super.scrollDown(element);
         return this;
     }

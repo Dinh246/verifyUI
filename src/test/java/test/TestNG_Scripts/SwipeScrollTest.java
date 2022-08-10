@@ -15,32 +15,36 @@ public class SwipeScrollTest {
     Detail detail;
 
     @BeforeClass
-    public void openApp(){
+    public void openApp() {
         androidDriver = AppiumDriverEx.getAndroidDriver();
         homePage = new Homepage(androidDriver);
         detail = new Detail(androidDriver);
     }
 
     @AfterClass
-    public void closeApp(){
+    public void closeApp() {
         androidDriver.quit();
     }
 
     @Test
-    public void testScroll(){
-        homePage.waitScreenStable(homePage.RecycleCollections())
+    public void testScroll() {
+        homePage
+                .waitForElement(homePage.RecycleCollections())
                 .swipeLeft(homePage.RecycleCollections())
                 .swipeRight(homePage.RecycleCollections())
+                .scrollDownMultipleTimes(homePage.RecycleCollections(), 5)
                 .scrollDown(homePage.RecycleRingtones())
                 .scrollUp(homePage.RecycleRingtones());
     }
 
     @Test
-    public void testSwipe(){
-        homePage.waitScreenStable(homePage.LeftMenu())
+    public void testSwipe() {
+        homePage
+                .waitForElement(homePage.LeftMenu())
                 .goToDetail(3);
 
-        detail.swipeLeft(detail.MediaFrame())
+        detail
+                .swipeLeft(detail.MediaFrame())
                 .swipeRight(detail.MediaFrame())
                 .swipeRight(detail.MediaFrame());
 

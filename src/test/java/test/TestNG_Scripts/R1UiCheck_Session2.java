@@ -23,21 +23,21 @@ public class R1UiCheck_Session2 {
         driverSession2 = AppiumDriverEx.getAndroidDriver();
         Homepage homePage = new Homepage(driverSession2);
         Detail detail = new Detail(driverSession2);
-        homePage.waitScreenStable(homePage.LeftMenu())
+        homePage.waitForElement(homePage.LeftMenu())
                 .goToDetail(2);
 
-        detail.waitScreenStable(detail.WaveAnim())
+        detail.waitForElement(detail.WaveAnim())
                 .stopRingtone()
                 .tapDownload()
                 .tapWatchAds()
                 .tapSettings()
                 .closeSettingsAndBackToHomepage();
 
-        homePage.waitScreenStable(homePage.RateBtn())
+        homePage.waitForElement(homePage.RateBtn())
                 .rateApp4Stars()
                 .selectHardToUse()
                 .selectAnOption()
-                .waitScreenStable(homePage.RequestBtn())
+                .waitForElement(homePage.RequestBtn())
                 .takeScreenshot(scrPath.en, "Hard-To-Use.jpg")
                 .submitFeedback()
                 .takeScreenshot(scrPath.en, "FAQ.jpg");

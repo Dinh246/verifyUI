@@ -59,8 +59,8 @@ public class Search extends userActions {
     }
 
     @Override
-    public Search waitScreenStable(WebElement Element) {
-        super.waitScreenStable(Element);
+    public Search waitForElement(WebElement Element) {
+        super.waitForElement(Element);
         return this;
     }
 }

@@ -34,10 +34,11 @@ public class R1UiCheck_Session1 {
 
     @Test(description = "Take screenshot of Homepage & Cate list")
     public void takeScreenshotHomepage() throws IOException {
-        homePage.waitScreenStable(homePage.LeftMenu())
+        homePage
+                .waitForElement(homePage.LeftMenu())
                 .takeScreenshot(scrPath.en, "Homepage.png")
                 .openMoreCate()
-                .waitScreenStable(homePage.ListCate())
+                .waitForElement(homePage.ListCate())
                 .takeScreenshot(scrPath.en, "Cate.jpg")
                 .closeMoreCate()
                 .goToDetail(2);
@@ -45,34 +46,36 @@ public class R1UiCheck_Session1 {
 
     @Test(priority = 2, groups = {"GroupA"})
     public void takeScreenshotDetail() throws IOException {
-        detail.waitScreenStable(detail.WaveAnim())
+        detail
+                .waitForElement(detail.WaveAnim())
                 .takeScreenshot(scrPath.en, "Detail-Before.jpg")
                 .stopRingtone()
                 .addToFavorites()
                 .tapDownload()
-                .waitScreenStable(detail.SkipBtn())
+                .waitForElement(detail.SkipBtn())
                 .takeScreenshot(scrPath.en, "Rewarded-Dialog.jpg")
                 .tapSkipRewarded()
-                .waitScreenStable(detail.AcceptBtn())
+                .waitForElement(detail.AcceptBtn())
                 .takeScreenshot(scrPath.en, "Skip-Rewarded-Dialog.jpg")
                 .tapAcceptRewarded()
-                .waitScreenStable(detail.DelBtn())
+                .waitForElement(detail.DelBtn())
                 .takeScreenshot(scrPath.en, "Detail-After.jpg")
                 .tapSettings()
-                .waitScreenStable(detail.SetRingBtn())
+                .waitForElement(detail.SetRingBtn())
                 .takeScreenshot(scrPath.en, "Settings-Options.jpg")
                 .closeSettingsAndBackToHomepage();
     }
 
     @Test(priority = 3, groups = {"GroupA"})
     public void takeScreenshotRating1() throws IOException {
-        homePage.waitScreenStable(homePage.RateBtn())
+        homePage
+                .waitForElement(homePage.RateBtn())
                 .takeScreenshot(scrPath.en, "Rate-App.jpg")
                 .rateApp4Stars()
-                .waitScreenStable(homePage.SendFeedbackBtn())
+                .waitForElement(homePage.SendFeedbackBtn())
                 .takeScreenshot(scrPath.en, "Feedback.jpg")
                 .selectNoFavoriteRingtone()
-                .waitScreenStable(homePage.RequestBtn())
+                .waitForElement(homePage.RequestBtn())
                 .takeScreenshot(scrPath.en, "No-Favorite-Ringtones.jpg")
                 .closeFeedback()
                 .goToSearch();
@@ -80,21 +83,26 @@ public class R1UiCheck_Session1 {
 
     @Test(priority = 4, groups = {"GroupA"})
     public void takeScreenshotSearch() throws IOException {
-        search.waitScreenStable(search.SearchTrends())
+        search
+                .waitForElement(search.SearchTrends())
                 .takeScreenshot(scrPath.en, "Search.jpg")
                 .chooseASearchTrend()
-                .waitScreenStable(search.RequestBtn())
+                .waitForElement(search.RequestBtn())
                 .takeScreenshot(scrPath.en, "Search-Results.jpg")
                 .removeAndSearchAnotherKeyword()
-                .waitScreenStable(search.RequestBtn())
+                .waitForElement(search.RequestBtn())
                 .takeScreenshot(scrPath.en, "Search-No-Results.jpg")
                 .goToRequestRing();
     }
 
     @Test(priority = 5, groups = {"GroupA"})
     public void takeScreenshotRequest() throws IOException {
-        requestRing.waitScreenStable(requestRing.BackBtn())
-                .enterInfo("Demo Song", "dinh.truong@qa.team")
+        requestRing
+                .waitForElement(requestRing.BackBtn())
+                .enterInfo(
+                        "Demo Song",
+                        "dinh.truong@qa.team"
+                )
                 .takeScreenshot(scrPath.en, "Request-Ring.jpg")
                 .submitRequest();
     }

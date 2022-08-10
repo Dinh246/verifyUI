@@ -22,6 +22,7 @@ public class AppiumDriverEx {
                 .setUdid("PDAGAA48A1506417")
                 .setAutomationName("uiautomator2")
                 .setAutoGrantPermissions(true)
+                .setIsHeadless(true)
                 .setPlatformName("Android")
                 .disableWindowAnimation();
 //                .setAppPackage("com.ringpro.popular.freerings")
@@ -49,14 +50,16 @@ public class AppiumDriverEx {
                 .setLanguage("en")
                 .setLocale("us")
 //                .setApp("C:\\Users\\nicky\\Downloads\\R4.apk")
-                .setUdid("R5CR514X3SX")
+                .setUdid("emulator-5554")
                 .setAutomationName("uiautomator2")
                 .setAutoGrantPermissions(true)
+                .setIsHeadless(true)
                 .setPlatformName("Android")
 //                .disableWindowAnimation()
+//                .noReset()
                 .setAppPackage("com.bluesky.best_ringtone.free2017")
                 .setAppActivity(".ui.splash.SplashActivity");
-//                .noReset();
+
 
         URL appiumServer = null;
         try {
@@ -68,7 +71,7 @@ public class AppiumDriverEx {
         assert appiumServer != null;
         androidDriver = new AndroidDriver(appiumServer, options);
         androidDriver.setSetting(WAIT_FOR_IDLE_TIMEOUT, 5);
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         return androidDriver;
     }

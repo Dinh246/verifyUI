@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.userActions;
 
-import javax.lang.model.util.Elements;
 import java.io.IOException;
 import java.util.List;
 
@@ -155,8 +154,8 @@ public class Homepage extends userActions {
     }
 
     @Override
-    public Homepage waitScreenStable(WebElement Element) {
-        super.waitScreenStable(Element);
+    public Homepage waitForElement(WebElement Element) {
+        super.waitForElement(Element);
         return this;
     }
 

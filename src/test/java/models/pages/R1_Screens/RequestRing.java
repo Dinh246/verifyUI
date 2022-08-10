@@ -48,8 +48,8 @@ public class RequestRing extends userActions {
         }
 
         @Override
-        public RequestRing waitScreenStable(WebElement Element) {
-                super.waitScreenStable(Element);
+        public RequestRing waitForElement(WebElement Element) {
+                super.waitForElement(Element);
                 return this;
         }
 }

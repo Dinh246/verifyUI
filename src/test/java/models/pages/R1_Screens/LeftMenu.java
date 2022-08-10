@@ -1,5 +1,6 @@
 package models.pages.R1_Screens;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.userActions;

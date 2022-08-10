@@ -113,14 +113,14 @@ public class Detail extends userActions {
 
     public void closeSettingsAndBackToHomepage() {
         androidDriver.findElement(setRingBtn).click();
-//        if (androidDriver.findElement(permissionDialog).isDisplayed()){
-//            super.waitScreenStable(androidDriver.findElement(okBtn));
-//            androidDriver.findElement(okBtn).click();
-//            super.waitScreenStable(androidDriver.findElement(okBtn));
-//            androidDriver.findElement(okBtn).click();
-//            androidDriver.findElement(switchOn).click();
-//            androidDriver.activateApp("com.bluesky.best_ringtone.free2017");
-//        }
+        if (androidDriver.findElement(permissionDialog).isDisplayed()){
+            super.waitForElement(androidDriver.findElement(okBtn));
+            androidDriver.findElement(okBtn).click();
+            super.waitForElement(androidDriver.findElement(okBtn));
+            androidDriver.findElement(okBtn).click();
+            androidDriver.findElement(switchOn).click();
+            androidDriver.activateApp("com.bluesky.best_ringtone.free2017");
+        }
         androidDriver.findElement(acceptBtn).click();
         androidDriver.findElement(noTry).click();
     }
@@ -132,8 +132,8 @@ public class Detail extends userActions {
     }
 
     @Override
-    public Detail waitScreenStable(WebElement Element) {
-        super.waitScreenStable(Element);
+    public Detail waitForElement(WebElement Element) {
+        super.waitForElement(Element);
         return this;
     }
 

@@ -32,8 +32,8 @@ public class userActions {
         return this;
     }
 
-    public userActions waitScreenStable(WebElement Element) {
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(5));
+    public userActions waitForElement(WebElement Element) {
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(Element));
         return this;
     }

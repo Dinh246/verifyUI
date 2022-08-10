@@ -26,7 +26,8 @@ public class MultipleAppiumDrivers {
 //                .noReset()
                 .setAppPackage("com.bluesky.best_ringtone.free2017")
                 .setAppActivity(".ui.splash.SplashActivity")
-                .setSystemPort(port);
+                .setSystemPort(port)
+                .setIsHeadless(true);
 
         URL appiumServer = null;
         try {
